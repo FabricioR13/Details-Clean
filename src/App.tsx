@@ -39,10 +39,10 @@ const SERVICES = [
 ];
 
 const GALLERY = [
-  { id: 1, url: '/fotos/camaro.webp', fallback: 'https://images.pexels.com/photos/32447521/pexels-photo-32447521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', alt: 'VW Scirocco Teal' },
-  { id: 2, url: '/fotos/golf.webp', fallback: 'https://images.pexels.com/photos/9783487/pexels-photo-9783487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', alt: 'Fiat Uno Red' },
-  { id: 3, url: '/fotos/azulfuria.webp', fallback: 'https://images.pexels.com/photos/11756442/pexels-photo-11756442.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', alt: 'Chevrolet Camaro Red' },
-  { id: 4, url: '/fotos/passat2.webp', fallback: 'https://images.pexels.com/photos/15230585/pexels-photo-15230585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', alt: 'VW Golf Blue' },
+  { id: 1, url: 'fotos/camaro.webp', fallback: 'https://images.pexels.com/photos/32447521/pexels-photo-32447521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', alt: 'VW Scirocco Teal' },
+  { id: 2, url: 'fotos/golf.webp', fallback: 'https://images.pexels.com/photos/9783487/pexels-photo-9783487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', alt: 'Fiat Uno Red' },
+  { id: 3, url: 'fotos/azulfuria.webp', fallback: 'https://images.pexels.com/photos/11756442/pexels-photo-11756442.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', alt: 'Chevrolet Camaro Red' },
+  { id: 4, url: 'fotos/passat2.webp', fallback: 'https://images.pexels.com/photos/15230585/pexels-photo-15230585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', alt: 'VW Golf Blue' },
 ];
 
 const TRANSFORMATIONS = [
@@ -50,8 +50,8 @@ const TRANSFORMATIONS = [
     id: 1,
     title: 'Camaro Vermelho',
     service: 'Polimento Completo',
-    beforeSrc: '/fotos/camaro.webp',  // Foto do Camaro de antes (ou outra de sua escolha)
-    afterSrc: '/fotos/camaro.webp',   // Foto do Camaro finalizado
+    beforeSrc: 'fotos/camaro.webp',  // Foto do Camaro de antes (ou outra de sua escolha)
+    afterSrc: 'fotos/camaro.webp',   // Foto do Camaro finalizado
     description: 'Recuperação profunda da pintura oxidada, devolvendo o brilho vermelho original que estava apagado pelo tempo.',
     steps: ['Descontaminação da pintura', 'Polimento em 3 etapas', 'Selante sintético'],
   },
@@ -59,8 +59,8 @@ const TRANSFORMATIONS = [
     id: 2,
     title: 'VW Golf GTI MK6',
     service: 'Lavagem & Detalhamento',
-    beforeSrc: '/fotos/passat2.webp', // Foto do Golf cinza/antigo
-    afterSrc: '/fotos/golf.webp',     // Foto do Golf azul claro fosco
+    beforeSrc: 'fotos/passat2.webp', // Foto do Golf cinza/antigo
+    afterSrc: 'fotos/golf.webp',     // Foto do Golf azul claro fosco
     description: 'Limpeza minuciosa de cada detalhe, incluindo caixas de roda, emblemas e frestas que uma lavagem comum nunca alcança.',
     steps: ['Pré-lavagem com snow foam', 'Escovas de detalhamento', 'Higienização de rodas'],
   },
@@ -68,8 +68,8 @@ const TRANSFORMATIONS = [
     id: 3,
     title: 'VW Golf GTI Black',
     service: 'Vitrificação Cerâmica',
-    beforeSrc: '/fotos/azulfuria.webp', // Substitua pelos seus arquivos de antes/depois reais
-    afterSrc: '/fotos/azulfuria.webp',
+    beforeSrc: 'fotos/azulfuria.webp', // Substitua pelos seus arquivos de antes/depois reais
+    afterSrc: 'fotos/azulfuria.webp',
     description: 'Aplicação de coating cerâmico que cria uma barreira protetora permanente, com efeito espelhado e repelência à água.',
     steps: ['Correção da pintura', 'Desengraxante técnico', 'Aplicação do coating 9H'],
   },
@@ -195,7 +195,7 @@ export default function App() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="/fotos/camaro.webp" 
+            src="fotos/camaro.webp" 
             alt="Garage Detailing" 
             className="w-full h-full object-cover object-center"
           />
@@ -253,7 +253,7 @@ export default function App() {
             >
               <div className="absolute -inset-4 bg-zinc-900/50 rounded-2xl transform -rotate-3" />
               <img 
-                src="/fotos/ia.webp" 
+                src="fotos/ia.webp" 
                 alt="Less is More Garage" 
                 onError={(e) => { e.currentTarget.src = 'https://images.pexels.com/photos/4489758/pexels-photo-4489758.jpeg?auto=compress&cs=tinysrgb&w=1000' }}
                 className="relative z-10 rounded-xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 w-full object-cover"
@@ -487,7 +487,7 @@ export default function App() {
               className="relative h-[600px] rounded-xl overflow-hidden border border-zinc-800"
             >
                <video
-                src="/fotos/gravação.mp4"
+                src="fotos/gravação.mp4"
                 poster="https://images.pexels.com/videos/6872478/pexels-photo-6872478.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=630"
                 autoPlay
                 muted
