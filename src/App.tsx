@@ -102,7 +102,7 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const WHATSAPP_NUMBER = "5511999999999"; // Replace with real number
+  const WHATSAPP_NUMBER = "5551991865423"; // Replace with real number
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20o%20meu%20ve%C3%ADculo.`;
 
   return (
@@ -243,63 +243,63 @@ export default function App() {
 
 
      {/* Philosophy Section - Less is More */}
-      <section id="filosofia" className="py-16 md:py-24 bg-zinc-950 relative overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6 }}
-              className="relative mb-8 lg:mb-0"
-            >
-              <div className="absolute -inset-4 bg-zinc-900/50 rounded-2xl transform -rotate-3 hidden sm:block" />
-              <img 
-                src="fotos/ia.webp" 
-                alt="Less is More Garage" 
-                onError={(e) => { e.currentTarget.src = 'https://images.pexels.com/photos/4489758/pexels-photo-4489758.jpeg?auto=compress&cs=tinysrgb&w=1000' }}
-                className="relative z-10 rounded-xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover"
-              />
-              <div className="absolute -bottom-6 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-4 z-20 bg-zinc-950 p-4 sm:p-6 border border-zinc-800 rounded-lg shadow-2xl text-center sm:text-left">
-                <p className="text-2xl sm:text-3xl font-serif text-white">"Less is More"</p>
-                <p className="text-xs sm:text-sm text-zinc-400 mt-1 sm:mt-2">Nossa filosofia de cuidado.</p>
-              </div>
-            </motion.div>
+<section id="filosofia" className="py-16 md:py-24 bg-zinc-950 relative overflow-hidden">
+  <div className="container mx-auto px-4 sm:px-6">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="relative mb-8 lg:mb-0"
+      >
+        <div className="absolute -inset-4 bg-zinc-900/50 rounded-2xl transform -rotate-3 hidden sm:block" />
+        
+        {/* IMAGEM ORIGINAL E COLORIDA */}
+        <img 
+          src="fotos/ia.webp" 
+          alt="Less is More Garage" 
+          onError={(e) => { e.currentTarget.src = 'https://pexels.com' }}
+          className="relative z-10 rounded-xl shadow-2xl w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover"
+        />
+       
+      </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6 }}
-              className="pt-6 lg:pt-0"
-            >
-              <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif mb-6 leading-tight">Mais que uma estética, uma comunidade.</h2>
-              <div className="space-y-4 sm:space-y-6 text-zinc-400 leading-relaxed text-base sm:text-lg">
-                <p>
-                  Na Detail's Clean, acreditamos que o cuidado automotivo vai muito além de produtos e máquinas. É sobre a <strong className="text-zinc-200">paixão por preservar</strong> a história e a beleza de cada veículo que entra em nossa garagem.
-                </p>
-                <p>
-                  Nossa filosofia <em>"Less is More"</em> dita que a perfeição mora nos detalhes sutis. Não entregamos promessas exageradas, entregamos resultados reais, palpáveis e impecáveis. 
-                </p>
-                <p>
-                  Somos um grupo de apaixonados por carros. Tratamos o seu veículo com o mesmo nível de exigência e carinho que tratamos os nossos.
-                </p>
-              </div>
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="pt-6 lg:pt-0"
+      >
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif mb-6 leading-tight">Mais que uma estética, uma comunidade.</h2>
+        <div className="space-y-4 sm:space-y-6 text-zinc-400 leading-relaxed text-base sm:text-lg">
+          <p>
+            Na Detail's Clean, acreditamos que o cuidado automotivo vai muito além de produtos e máquinas. É sobre a <strong className="text-zinc-200">paixão por preservar</strong> a história e a beleza de cada veículo que entra em nossa garagem.
+          </p>
+          <p>
+            Nossa filosofia <em>"Less is More"</em> dita que a perfeição mora nos detalhes sutis. Não entregamos promessas exageradas, entregamos resultados reais, palpáveis e impecáveis. 
+          </p>
+          <p>
+            Somos um grupo de apaixonados por carros. Tratamos o seu veículo com o mesmo nível de exigência e carinho que tratamos os nossos.
+          </p>
+        </div>
 
-              <div className="grid grid-cols-2 gap-4 sm:gap-6 mt-10 sm:grid-cols-2">
-                <div className="border-l-2 border-red-600 pl-4">
-                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">+10</div>
-                  <div className="text-xs sm:text-sm text-zinc-500 uppercase tracking-wider">Anos de Experiência</div>
-                </div>
-                <div className="border-l-2 border-red-600 pl-4">
-                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">100%</div>
-                  <div className="text-xs sm:text-sm text-zinc-500 uppercase tracking-wider">Paixão no detalhe</div>
-                </div>
-              </div>
-            </motion.div>
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 mt-10 sm:grid-cols-2">
+          <div className="border-l-2 border-red-600 pl-4">
+            <div className="text-2xl sm:text-3xl font-bold text-white mb-1">+10</div>
+            <div className="text-xs sm:text-sm text-zinc-500 uppercase tracking-wider">Anos de Experiência</div>
+          </div>
+          <div className="border-l-2 border-red-600 pl-4">
+            <div className="text-2xl sm:text-3xl font-bold text-white mb-1">100%</div>
+            <div className="text-xs sm:text-sm text-zinc-500 uppercase tracking-wider">Paixão no detalhe</div>
           </div>
         </div>
-      </section>
+      </motion.div>
+    </div>
+  </div>
+</section>
+
 
 
       {/* Services Section */}
@@ -548,7 +548,7 @@ export default function App() {
           
           <div className="mt-10 md:mt-12 text-center">
              <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/detailsclean/" 
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 text-zinc-300 hover:text-white border-b border-zinc-700 hover:border-red-500 pb-1 transition-all text-sm sm:text-base"
@@ -589,15 +589,15 @@ export default function App() {
               <ul className="space-y-3 sm:space-y-4 text-zinc-400 text-sm">
                 <li className="flex items-center justify-center md:justify-start gap-3">
                   <MapPin size={16} className="text-red-500 shrink-0" />
-                  <span>Rua das Orquídeas, 123 - São Paulo, SP</span>
+                  <span>R. Fernão de Magalhães, 297 - Bom Sucesso, Gravataí - RS, 94130-200</span>
                 </li>
                 <li className="flex items-center justify-center md:justify-start gap-3">
                   <MessageCircle size={16} className="text-red-500 shrink-0" />
-                  <span>+55 (11) 99999-9999</span>
+                  <span>+55 (51) 99186-5423</span>
                 </li>
                 <li className="flex items-center justify-center md:justify-start gap-3">
                   <span className="text-red-500 font-bold shrink-0">@</span>
-                  <span>@detailsclean.oficial</span>
+                  <span>@detailsclean</span>
                 </li>
               </ul>
             </div>
