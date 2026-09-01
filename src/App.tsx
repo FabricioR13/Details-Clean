@@ -190,48 +190,49 @@ export default function App() {
         </AnimatePresence>
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+     {/* Hero Section */}
+      <section className="relative min-h-screen md:h-screen flex items-center justify-center overflow-hidden pt-24 pb-12 md:py-0">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
             src="fotos/camaro.webp" 
             alt="Garage Detailing" 
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-[35%_center] md:object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-zinc-950 via-zinc-950/90 md:via-zinc-950/80 to-zinc-950/40 md:to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent" />
         </div>
 
-        <div className="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 pt-20">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col justify-center items-start text-left"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-800 bg-zinc-900/50 backdrop-blur-sm text-xs font-medium text-zinc-300 mb-6">
               <Star className="w-3 h-3 text-red-500 fill-red-500" />
               Estética Automotiva Visionária
             </div>
-            <h1 className="text-5xl md:text-7xl font-serif mb-6 leading-[1.1]">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif mb-6 leading-[1.2] md:leading-[1.1]">
               A Arte de Cuidar do Seu <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">Veículo.</span>
             </h1>
-            <p className="text-lg text-zinc-400 mb-8 max-w-lg leading-relaxed">
+            <p className="text-base sm:text-lg text-zinc-400 mb-8 max-w-lg leading-relaxed">
               Não fazemos apenas lavagem. Fazemos uma avaliação meticulosa para entender o que o seu carro precisa e entregar um resultado impecável. Paixão por cada detalhe.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <a 
                 href={whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-sm font-medium transition-all text-center flex items-center justify-center gap-2 group"
+                className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-sm font-medium transition-all text-center flex items-center justify-center gap-2 group w-full sm:w-auto"
               >
                 Falar com Especialista
                 <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
               <a 
                 href="#servicos" 
-                className="border border-zinc-700 hover:border-zinc-500 bg-zinc-900/50 hover:bg-zinc-800 text-white px-8 py-4 rounded-sm font-medium transition-all text-center backdrop-blur-sm"
+                className="border border-zinc-700 hover:border-zinc-500 bg-zinc-900/50 hover:bg-zinc-800 text-white px-8 py-4 rounded-sm font-medium transition-all text-center backdrop-blur-sm w-full sm:w-auto"
               >
                 Conheça os Serviços
               </a>
@@ -240,27 +241,28 @@ export default function App() {
         </div>
       </section>
 
-      {/* Philosophy Section - Less is More */}
-      <section id="filosofia" className="py-24 bg-zinc-950 relative">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+     {/* Philosophy Section - Less is More */}
+      <section id="filosofia" className="py-16 md:py-24 bg-zinc-950 relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6 }}
-              className="relative"
+              className="relative mb-8 lg:mb-0"
             >
-              <div className="absolute -inset-4 bg-zinc-900/50 rounded-2xl transform -rotate-3" />
+              <div className="absolute -inset-4 bg-zinc-900/50 rounded-2xl transform -rotate-3 hidden sm:block" />
               <img 
                 src="fotos/ia.webp" 
                 alt="Less is More Garage" 
                 onError={(e) => { e.currentTarget.src = 'https://images.pexels.com/photos/4489758/pexels-photo-4489758.jpeg?auto=compress&cs=tinysrgb&w=1000' }}
-                className="relative z-10 rounded-xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 w-full object-cover"
+                className="relative z-10 rounded-xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover"
               />
-              <div className="absolute bottom-1 right-50 z-20 bg-zinc-950 p-6 border border-zinc-800 rounded-lg shadow-2xl">
-                <p className="text-3xl font-serif text-white">"Less is More"</p>
-                <p className="text-sm text-zinc-400 mt-2">Nossa filosofia de cuidado.</p>
+              <div className="absolute -bottom-6 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-4 z-20 bg-zinc-950 p-4 sm:p-6 border border-zinc-800 rounded-lg shadow-2xl text-center sm:text-left">
+                <p className="text-2xl sm:text-3xl font-serif text-white">"Less is More"</p>
+                <p className="text-xs sm:text-sm text-zinc-400 mt-1 sm:mt-2">Nossa filosofia de cuidado.</p>
               </div>
             </motion.div>
 
@@ -269,9 +271,10 @@ export default function App() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6 }}
+              className="pt-6 lg:pt-0"
             >
-              <h2 className="text-3xl md:text-5xl font-serif mb-6">Mais que uma estética, uma comunidade.</h2>
-              <div className="space-y-6 text-zinc-400 leading-relaxed text-lg">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif mb-6 leading-tight">Mais que uma estética, uma comunidade.</h2>
+              <div className="space-y-4 sm:space-y-6 text-zinc-400 leading-relaxed text-base sm:text-lg">
                 <p>
                   Na Detail's Clean, acreditamos que o cuidado automotivo vai muito além de produtos e máquinas. É sobre a <strong className="text-zinc-200">paixão por preservar</strong> a história e a beleza de cada veículo que entra em nossa garagem.
                 </p>
@@ -283,14 +286,14 @@ export default function App() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-6 mt-12">
+              <div className="grid grid-cols-2 gap-4 sm:gap-6 mt-10 sm:grid-cols-2">
                 <div className="border-l-2 border-red-600 pl-4">
-                  <div className="text-3xl font-bold text-white mb-1">+10</div>
-                  <div className="text-sm text-zinc-500 uppercase tracking-wider">Anos de Experiência</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">+10</div>
+                  <div className="text-xs sm:text-sm text-zinc-500 uppercase tracking-wider">Anos de Experiência</div>
                 </div>
                 <div className="border-l-2 border-red-600 pl-4">
-                  <div className="text-3xl font-bold text-white mb-1">100%</div>
-                  <div className="text-sm text-zinc-500 uppercase tracking-wider">Paixão em cada detalhe</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">100%</div>
+                  <div className="text-xs sm:text-sm text-zinc-500 uppercase tracking-wider">Paixão no detalhe</div>
                 </div>
               </div>
             </motion.div>
@@ -298,15 +301,16 @@ export default function App() {
         </div>
       </section>
 
+
       {/* Services Section */}
-      <section id="servicos" className="py-24 bg-zinc-900 border-y border-zinc-800">
-        <div className="container mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+      <section id="servicos" className="py-16 md:py-24 bg-zinc-900 border-y border-zinc-800">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-serif mb-6"
+              className="text-2xl sm:text-3xl md:text-5xl font-serif mb-4 md:mb-6"
             >
               Serviços Especializados
             </motion.h2>
@@ -315,13 +319,13 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-zinc-400 text-lg"
+              className="text-zinc-400 text-base sm:text-lg"
             >
               Cada carro é único. Por isso, oferecemos um leque de serviços que podem ser personalizados após nossa avaliação técnica.
             </motion.p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {SERVICES.map((service, index) => {
               const Icon = service.icon;
               return (
@@ -331,13 +335,13 @@ export default function App() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-zinc-950 border border-zinc-800 p-8 hover:border-red-500/50 transition-colors group"
+                  className="bg-zinc-950 border border-zinc-800 p-6 sm:p-8 hover:border-red-500/50 transition-colors group rounded-sm"
                 >
                   <div className="w-12 h-12 bg-zinc-900 border border-zinc-800 rounded-sm flex items-center justify-center mb-6 group-hover:bg-red-950/30 group-hover:border-red-900/50 transition-colors">
                     <Icon className="w-6 h-6 text-zinc-400 group-hover:text-red-500 transition-colors" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                  <p className="text-zinc-500 text-sm leading-relaxed mb-6">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-3">{service.title}</h3>
+                  <p className="text-zinc-500 text-sm leading-relaxed">
                     {service.description}
                   </p>
                 </motion.div>
@@ -347,10 +351,10 @@ export default function App() {
         </div>
       </section>
 
-      {/* Before/After Transformations Section */}
-      <section id="transformacoes" className="py-24 bg-gradient-to-b from-zinc-950 to-zinc-900 border-y border-zinc-800 relative overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+{/* Before/After Transformations Section */}
+      <section id="transformacoes" className="py-16 md:py-24 bg-gradient-to-b from-zinc-950 to-zinc-900 border-y border-zinc-800 relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -365,7 +369,7 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl font-serif mb-6"
+              className="text-2xl sm:text-3xl md:text-5xl font-serif mb-4 md:mb-6"
             >
               Resultados <span className="text-red-500">Reais</span>.
             </motion.h2>
@@ -374,13 +378,13 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-zinc-400 text-lg"
+              className="text-zinc-400 text-base sm:text-lg"
             >
               Arraste o slider e veja a diferença que o cuidado meticuloso da Detail's Clean faz no seu veículo.
             </motion.p>
           </div>
 
-          <div className="space-y-10">
+          <div className="space-y-8 md:space-y-10">
             {TRANSFORMATIONS.map((item, index) => (
               <motion.div
                 key={item.id}
@@ -388,24 +392,28 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ delay: index * 0.15, duration: 0.6 }}
-                className="grid lg:grid-cols-[1.2fr_1fr] gap-8 items-center bg-zinc-900/30 border border-zinc-800 rounded-xl p-6 lg:p-8 hover:border-red-900/50 transition-colors"
+                className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-6 md:gap-8 items-center bg-zinc-900/30 border border-zinc-800 rounded-xl p-4 sm:p-6 lg:p-8 hover:border-red-900/50 transition-colors"
               >
-                <BeforeAfterSlider
-                  beforeSrc={item.beforeSrc}
-                  afterSrc={item.afterSrc}
-                  alt={item.title}
-                  beforeLabel="ANTES"
-                  afterLabel="DEPOIS"
-                />
-                <div>
-                  <span className="inline-block text-[10px] font-bold tracking-[0.25em] text-red-500 uppercase bg-red-950/30 border border-red-900/30 px-3 py-1 rounded-sm mb-4">
-                    {item.service}
-                  </span>
-                  <h3 className="text-2xl lg:text-3xl font-serif text-white mb-4">{item.title}</h3>
-                  <p className="text-zinc-400 leading-relaxed mb-6">
-                    {item.description}
-                  </p>
-                  <div className="space-y-2.5">
+                <div className="w-full overflow-hidden rounded-lg">
+                  <BeforeAfterSlider
+                    beforeSrc={item.beforeSrc}
+                    afterSrc={item.afterSrc}
+                    alt={item.title}
+                    beforeLabel="ANTES"
+                    afterLabel="DEPOIS"
+                  />
+                </div>
+                <div className="flex flex-col justify-center">
+                  <div>
+                    <span className="inline-block text-[10px] font-bold tracking-[0.25em] text-red-500 uppercase bg-red-950/30 border border-red-900/30 px-3 py-1 rounded-sm mb-3 md:mb-4">
+                      {item.service}
+                    </span>
+                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-serif text-white mb-3 md:mb-4">{item.title}</h3>
+                    <p className="text-zinc-400 text-sm sm:text-base leading-relaxed mb-6">
+                      {item.description}
+                    </p>
+                  </div>
+                  <div className="space-y-2.5 border-t border-zinc-800/60 pt-4 lg:pt-0 lg:border-t-0">
                     <p className="text-xs font-bold tracking-wider text-zinc-500 uppercase">
                       O que foi feito:
                     </p>
@@ -413,7 +421,7 @@ export default function App() {
                       {item.steps.map((step, i) => (
                         <li key={i} className="flex items-start gap-2.5 text-sm text-zinc-300">
                           <CheckCircle2 className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-                          {step}
+                          <span>{step}</span>
                         </li>
                       ))}
                     </ul>
@@ -423,41 +431,42 @@ export default function App() {
             ))}
           </div>
 
-          <div className="mt-12 text-center">
-            <p className="text-zinc-500 text-sm mb-6">
+          <div className="mt-12 text-center px-4">
+            <p className="text-zinc-500 text-sm mb-4 md:mb-6">
               Quer ver essa transformação no seu veículo?
             </p>
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-sm font-medium transition-all items-center gap-2 group"
+              className="inline-flex bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-sm font-medium transition-all items-center justify-center gap-2 group w-full sm:w-auto text-sm sm:text-base shadow-lg"
             >
               <MessageCircle size={18} />
-              Agendar uma Avaliação
+              <span>Agendar uma Avaliação</span>
               <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </div>
       </section>
 
-      {/* The Process Section */}
-      <section id="processo" className="py-24 bg-zinc-950 relative overflow-hidden">
+
+     {/* The Process Section */}
+      <section id="processo" className="py-16 md:py-24 bg-zinc-950 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'#ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }} />
         
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
             >
-              <h2 className="text-3xl md:text-5xl font-serif mb-6">Nosso Cuidado Começa na Avaliação.</h2>
-              <p className="text-zinc-400 text-lg mb-8">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif mb-4 md:mb-6">Nosso Cuidado Começa na Avaliação.</h2>
+              <p className="text-zinc-400 text-base sm:text-lg mb-8 max-w-xl">
                 Não vendemos pacotes prontos sem antes entender a real necessidade do seu veículo. Acreditamos que o tratamento adequado exige diagnóstico preciso.
               </p>
 
-              <div className="space-y-6">
+              <div className="space-y-4 md:space-y-6">
                 {[
                   { title: 'Agendamento Prévio', desc: 'Entramos em contato para entender sua rotina e agendar o melhor momento para receber seu veículo.' },
                   { title: 'Avaliação Técnica (Ouvir e Ver)', desc: 'Analisamos a pintura, interior e detalhes. Conversamos para entender o que te incomoda no carro atualmente.' },
@@ -471,9 +480,9 @@ export default function App() {
                       </div>
                       {idx !== 3 && <div className="w-px h-full bg-zinc-800 my-2" />}
                     </div>
-                    <div className="pb-4">
-                      <h4 className="text-white font-medium text-lg">{step.title}</h4>
-                      <p className="text-zinc-500 text-sm mt-1">{step.desc}</p>
+                    <div className="pb-2 md:pb-4">
+                      <h4 className="text-white font-medium text-base sm:text-lg">{step.title}</h4>
+                      <p className="text-zinc-500 text-sm mt-1 leading-relaxed">{step.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -483,8 +492,8 @@ export default function App() {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative h-[600px] rounded-xl overflow-hidden border border-zinc-800"
+              viewport={{ once: true, margin: "-50px" }}
+              className="relative h-[350px] sm:h-[450px] lg:h-[600px] w-full rounded-xl overflow-hidden border border-zinc-800 mt-6 lg:mt-0"
             >
                <video
                 src="fotos/gravação.mp4"
@@ -503,15 +512,16 @@ export default function App() {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section id="galeria" className="py-24 bg-zinc-900">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-serif mb-4">Resultados Impecáveis</h2>
-            <p className="text-zinc-400 text-lg">Um pouco do nosso portfólio de obras de arte automobilísticas.</p>
+
+    {/* Gallery Section */}
+      <section id="galeria" className="py-16 md:py-24 bg-zinc-900">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif mb-4">Resultados Impecáveis</h2>
+            <p className="text-zinc-400 text-base sm:text-lg">Um pouco do nosso portfólio de obras de arte automobilísticas.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {GALLERY.map((img, idx) => (
               <motion.div
                 key={img.id}
@@ -519,7 +529,7 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="relative group overflow-hidden bg-zinc-800 rounded-sm aspect-[4/3]"
+                className="relative group overflow-hidden bg-zinc-800 rounded-sm aspect-[4/3] w-full"
               >
                 <img 
                   src={img.url} 
@@ -528,7 +538,7 @@ export default function App() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="text-white font-serif text-lg tracking-wider border border-white/30 px-6 py-2 backdrop-blur-sm">
+                  <span className="text-white font-serif text-base sm:text-lg tracking-wider border border-white/30 px-6 py-2 backdrop-blur-sm">
                     Ver Detalhes
                   </span>
                 </div>
@@ -536,12 +546,12 @@ export default function App() {
             ))}
           </div>
           
-          <div className="mt-12 text-center">
+          <div className="mt-10 md:mt-12 text-center">
              <a 
                 href="https://instagram.com" 
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 text-zinc-300 hover:text-white border-b border-zinc-700 hover:border-red-500 pb-1 transition-all"
+                className="inline-flex items-center gap-2 text-zinc-300 hover:text-white border-b border-zinc-700 hover:border-red-500 pb-1 transition-all text-sm sm:text-base"
               >
                 Veja mais no nosso Instagram
               </a>
@@ -550,58 +560,58 @@ export default function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-zinc-950 pt-20 pb-10 border-t border-zinc-900">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-12 mb-16">
-            <div>
-              <div className="mb-6">
+      <footer className="bg-zinc-950 pt-16 md:pt-20 pb-10 border-t border-zinc-900">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 mb-12 md:mb-16">
+            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+              <div className="mb-4 md:mb-6">
                 <img 
                   src="/images/logo.png" 
                   alt="Detail's Clean Logo" 
-                  className="h-16 w-auto object-contain"
+                  className="h-14 md:h-16 w-auto object-contain"
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';
                     const span = e.currentTarget.nextElementSibling as HTMLElement;
                     if (span) span.style.display = 'block';
                   }}
                 />
-                <span className="text-2xl font-serif tracking-widest text-zinc-100 uppercase drop-shadow-[0_0_15px_rgba(239,68,68,0.3)] hidden">
+                <span className="text-xl sm:text-2xl font-serif tracking-widest text-zinc-100 uppercase drop-shadow-[0_0_15px_rgba(239,68,68,0.3)] hidden">
                   Detail's<span className="text-red-500">.</span>Clean
                 </span>
               </div>
-              <p className="text-zinc-500 text-sm leading-relaxed">
+              <p className="text-zinc-500 text-sm leading-relaxed max-w-sm">
                 Estética automotiva visionária. Cuidamos do seu carro com a paixão e a precisão que ele merece. Less is More.
               </p>
             </div>
             
-            <div>
-              <h4 className="text-white font-medium mb-6 uppercase tracking-wider text-sm">Contato</h4>
-              <ul className="space-y-4 text-zinc-400 text-sm">
-                <li className="flex items-center gap-3">
-                  <MapPin size={16} className="text-red-500" />
-                  Rua das Orquídeas, 123 - São Paulo, SP
+            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+              <h4 className="text-white font-medium mb-4 md:mb-6 uppercase tracking-wider text-xs sm:text-sm border-b border-red-600/30 pb-1 w-fit">Contato</h4>
+              <ul className="space-y-3 sm:space-y-4 text-zinc-400 text-sm">
+                <li className="flex items-center justify-center md:justify-start gap-3">
+                  <MapPin size={16} className="text-red-500 shrink-0" />
+                  <span>Rua das Orquídeas, 123 - São Paulo, SP</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <MessageCircle size={16} className="text-red-500" />
-                  +55 (11) 99999-9999
+                <li className="flex items-center justify-center md:justify-start gap-3">
+                  <MessageCircle size={16} className="text-red-500 shrink-0" />
+                  <span>+55 (11) 99999-9999</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <span className="text-red-500 font-bold">@</span>
-                  @detailsclean.oficial
+                <li className="flex items-center justify-center md:justify-start gap-3">
+                  <span className="text-red-500 font-bold shrink-0">@</span>
+                  <span>@detailsclean.oficial</span>
                 </li>
               </ul>
             </div>
 
-            <div>
-              <h4 className="text-white font-medium mb-6 uppercase tracking-wider text-sm">Pronto para a perfeição?</h4>
-              <p className="text-zinc-500 text-sm mb-6">
+            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+              <h4 className="text-white font-medium mb-4 md:mb-6 uppercase tracking-wider text-xs sm:text-sm border-b border-red-600/30 pb-1 w-fit">Pronto para a perfeição?</h4>
+              <p className="text-zinc-500 text-sm mb-6 max-w-sm">
                 Agende uma avaliação e descubra o verdadeiro potencial do seu veículo.
               </p>
               <a 
                 href={whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-sm text-sm font-medium transition-all items-center gap-2 w-full justify-center"
+                className="inline-flex bg-red-600 hover:bg-red-700 text-white px-6 py-3.5 rounded-sm text-sm font-medium transition-all items-center gap-2 w-full max-w-md justify-center shadow-lg"
               >
                 <MessageCircle size={18} />
                 Agendar via WhatsApp
@@ -609,7 +619,7 @@ export default function App() {
             </div>
           </div>
           
-          <div className="border-t border-zinc-900 pt-8 text-center text-zinc-600 text-sm">
+          <div className="border-t border-zinc-900 pt-8 text-center text-zinc-600 text-xs sm:text-sm">
             <p>&copy; {new Date().getFullYear()} Detail's Clean. Estética Automotiva. Todos os direitos reservados.</p>
           </div>
         </div>
